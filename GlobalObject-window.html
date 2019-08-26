@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      // 객체 메소드 alert 호출
+      window.alert('Hello world');
+      alert("Hello world");             // window 생략 가능
+      // 전역 변수 a에 접근
+      var a = 1;
+      alert(window.a); 
+      alert(a);
+      var b = {id:1};
+      alert(window.b.id);
+      alert(b.id);
+    </script>
+    <ul>
+      <li>전역변수와 함수는 window 객체의 property와 method이다.</li>
+      <li>모든 객체는 window의 자식이다.</li>
+
+    </ul>
+  </body>
+</html>
