@@ -7,23 +7,16 @@
   </head>
   <body>
     <div id="start">
-      <h1>{{calcDate}}</h1>
-      <h2>{{calcDate}}</h2>
-      <h3>{{calcDate}}</h3>
+      <h1 v-if="conditional1">1</h1>
+      <h1 v-if="conditional2">2</h1>
     </div>
     <script type="text/javascript">
       let app = new Vue({
         el: '#start',
         data() {
           return {
-            date: new Date()
-          }
-        },
-        computed: {
-          calcDate: function() {
-            return `${this.date.getFullYear()}
-            -${parseInt(this.date.getMonth()) + 1}
-            -${this.date.getDate()}`
+            conditional1: true,
+            conditional2: false
           }
         }
       })
