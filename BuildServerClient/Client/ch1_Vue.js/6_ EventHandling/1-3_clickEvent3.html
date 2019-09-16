@@ -7,7 +7,10 @@
   </head>
   <body>
     <div id="start">
-      <button type="button" name="button" v-on:click="test('text', $event)">인자전달</button>
+      <button type="button" name="button" v-on:click="test('base', $event)">인자전달</button>
+      <button type="button" name="button" v-on:click.right="test('right', $event)">인자전달</button>
+      <button type="button" name="button" v-on:click.left="test('left', $event)">인자전달</button>
+      <button type="button" name="button" v-on:click.middle="test('middle', $event)">인자전달</button>
     </div>
     <script type="text/javascript">
       let app = new Vue({
