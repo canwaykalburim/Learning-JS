@@ -8,7 +8,7 @@
   <body>
     <div id="start">
       <ul>
-        <li v-for="(data, idx) in dataSet">{{idx}} : {{data.t}}</li>
+        <li v-for="data in calcDataSet">{{data.t}}</li>
       </ul>
     </div>
     <script type="text/javascript">
@@ -17,11 +17,18 @@
         data() {
           return {
             dataSet: [
-              { t : '1' },
               { t : '2' },
               { t : '3' },
-              { t : '4' }
+              { t : '5' },
+              { t : '7' }
             ]
+          }
+        },
+        computed: {
+          calcDataSet :function() {
+            return this.dataSet.filter(function(item) {
+              return !(item.t % 3)
+            })
           }
         }
       })

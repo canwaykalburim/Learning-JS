@@ -7,21 +7,24 @@
   </head>
   <body>
     <div id="start">
-      <ul>
-        <li v-for="(data, idx) in dataSet">{{idx}} : {{data.t}}</li>
-      </ul>
+      <button type="button" name="button" v-on:click="increase">+</button>
+      <button type="button" name="button" v-on:click="decrease">-</button>
+      <h1>{{value}}</h1>
     </div>
     <script type="text/javascript">
       let app = new Vue({
         el: '#start',
         data() {
           return {
-            dataSet: [
-              { t : '1' },
-              { t : '2' },
-              { t : '3' },
-              { t : '4' }
-            ]
+            value: 1
+          }
+        },
+        methods: {
+          increase: function() {
+            this.value += 1
+          },
+          decrease: function() {
+            this.value -= 1
           }
         }
       })
